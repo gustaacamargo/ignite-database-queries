@@ -1,0 +1,18 @@
+version: "3.7"
+
+services: 
+  database_ignite_queries: 
+    image: postgres
+    container_name: database_ignite_queries
+    restart: always
+    ports: 
+      - 5433:5432
+    environment: 
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=ignite
+      - POSTGRES_DB=queries_challenge
+    volumes: 
+      - pgdata:/data/postgres
+
+volumes:
+  pgdata:
